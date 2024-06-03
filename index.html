@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ Lưới Delaunay và Voronoi từ Hình Ảnh</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/d3-delaunay@6"></script>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+
+<body>
+    <div class="control-panel">
+        <label for="numPoints">Random số điểm:</label>
+        <input type="number" id="numPoints" value="100" min="1" max="10000">
+        <input type="file" id="imageInput" accept="image/*">
+        <label for="showDelaunay">Delaunay:</label>
+        <input type="checkbox" id="showDelaunay" checked>
+        <label for="showVoronoi">Voronoi:</label>
+        <input type="checkbox" id="showVoronoi" checked>
+        <button id="exportDelaunayPNGButton">Xuất file Delaunay PNG</button>
+        <button id="exportVoronoiPNGButton">Xuất file Voronoi PNG</button>
+        <button id="exportDelaunayVRMLButton">Xuất file Delaunay VRML</button>
+        <button id="exportVoronoiVRMLButton">Xuất file Voronoi VRML</button>
+        
+        <label for="pointsInput">Nhập danh sách điểm (x,y):</label>
+        <textarea id="pointsInput" placeholder="(ví dụ: 10,20;30,40)"></textarea>
+        <button id="updatePointsButton">Vẽ Lại</button>
+    </div>
+    <div class="canvas-container">
+        <canvas id="originalCanvas"></canvas>
+        <canvas id="overlayCanvas"></canvas>
+        <canvas id="voronoiColorCanvas"></canvas>
+    </div>
+    <script src="js\main.js"></script>
+</body>
+
+</html>
